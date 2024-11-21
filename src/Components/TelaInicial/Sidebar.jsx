@@ -31,17 +31,17 @@ function Sidebar({ openSidebarToggle, OpenSidebar }) {
         </li>
         <li className='sidebar-list-item'>
           <Link to="">
-            <BsListCheck className='icon' /> Aplicar jogo
+            <BsListCheck className='icon' /> Lista de Professores
           </Link>
         </li>
-        <li className='sidebar-list-item'>
+        <li className='sidebar-list-item'> 
           <Link to="/salaVirtual">
             <BsPeopleFill className='icon' /> Monitorar alunos
           </Link>
         </li>
         <li className='sidebar-list-item'>
           <Link to="/login">
-            <BsMenuButtonWideFill className='icon' /> Cadastrar aluno
+            <BsMenuButtonWideFill className='icon' /> Cadastrar Professor
           </Link>
         </li>
         <li className='sidebar-list-item'>

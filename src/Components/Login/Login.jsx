@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import './Login.css';
 import user_icon from '../Assets/person.png';
 import email_icon from '../Assets/email.png';
-import password_icon from '../Assets/password.png';
+import school_icon from '../Assets/school.png';
 import { useAppContext } from "../../AppContext";
 
 const Login = () => {
@@ -16,7 +16,7 @@ const Login = () => {
     return (
         <div className='container'>
             <div className="header">
-                <div className="text">Cadastrar Aluno</div>
+                <div className="text">Cadastrar Professor</div>
                 <div className="underline"></div>
             </div>
             <div className="inputs">
@@ -29,15 +29,15 @@ const Login = () => {
                     <input type="email" placeholder="Email" />
                 </div>
                 <div className="input">
-                    <img src={password_icon} alt="Password Icon" />
-                    <input type="password" placeholder="Senha" />
+                    <img src={school_icon} alt="School Icon"/>
+                    <input type="text" placeholder="Escola"/>
                 </div>
             </div>
             <div className="forgot-password">
                 Mandar senha pelo email <span>Clique aqui!</span>
             </div>
             <div className="submit-container">
-                <Link to="/" onClick={handleRegister}>
+                <Link to="/salaNova" onClick={handleRegister}>
                     <button className="submit">Cadastrar</button>
                 </Link>
             </div>

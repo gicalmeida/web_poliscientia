@@ -32,7 +32,7 @@ function SalaVirtual() {
                                     <h4>VER SALA</h4>
                                 </Link>
                                 <Link to="/alunos" className={styles.cardLink}>
-                                    <h4>VER ALUNOS</h4>
+                                    <h4>REMOVER</h4>
                                 </Link>
                             </div>
                         </div>

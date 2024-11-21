@@ -28,16 +28,12 @@ function SalaNova() {
                     <img src={description} alt="Ícone de descrição" />
                     <input type="text" placeholder="Descrição da sala" />
                 </div>
-                <div className={styles.input}>
-                    <img src={number} alt="Ícone número de alunos" />
-                    <input type="number" placeholder="Número máximo de alunos" />
-                </div>
             </div>
             <div className={styles.forgot_password}>
                 É obrigatório cadastrar um aluno para a criação da sala
             </div>
             <div className={styles.submit_container}>
-                <Link to="/login" onClick={handleCreateRoom}>
+                <Link to="/" onClick={handleCreateRoom}>
                     <button className={styles.submit}>Criar</button>
                 </Link>
             </div>
