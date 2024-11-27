@@ -17,7 +17,7 @@ export const AppProvider = ({ children }) => {
             { name: 'Questão 06', er: 2390, ac: 3800, amt: 2500 },
             { name: 'Questão 07', er: 3490, ac: 4300, amt: 2100 },
         ],
-        salas: [
+        /*salas: [
             {
                 id: 1,
                 nome: "1° INFORMÁTICA",
@@ -72,7 +72,7 @@ export const AppProvider = ({ children }) => {
                 ano: "3° ANO TÉCNICO EM ELETROELETRÔNICA",
                 alunos: 36
             }
-        ],
+        ],*/
         alunosList: [
             { id: 1, nome: "ALUNO 1", email: "aluno1@gmail.com", senha: "********", pontuacao: 395 },
             { id: 2, nome: "ALUNO 2", email: "aluno2@gmail.com", senha: "********", pontuacao: 450 },
@@ -92,12 +92,14 @@ export const AppProvider = ({ children }) => {
         ],
     });
 
+
     const registerStudent = () => {
         setData(prevData => ({
             ...prevData,
             alunos: prevData.alunos + 1
         }));
     };
+
 
     const createRoom = () => {
         setData(prevData => ({
@@ -106,12 +108,14 @@ export const AppProvider = ({ children }) => {
         }));
     };
 
+
     return (
         <AppContext.Provider value={{ data, registerStudent, createRoom }}>
             {children}
         </AppContext.Provider>
     );
 };
+
 
 export const useAppContext = () => {
     return useContext(AppContext);

@@ -15,18 +15,23 @@ function Sidebar({ openSidebarToggle, OpenSidebar }) {
 
       <ul className='sidebar-list'>
         <li className='sidebar-list-item'>
-          <Link to="/">
-            <BsGrid1X2Fill className='icon' /> Visão Geral
-          </Link>
-        </li>
-        <li className='sidebar-list-item'>
           <Link to="/salaNova">
             <BsFillGrid3X3GapFill className='icon' /> Criar nova sala
           </Link>
         </li>
         <li className='sidebar-list-item'>
+          <Link to="/login">
+            <BsMenuButtonWideFill className='icon' /> Cadastrar Professor
+          </Link>
+        </li>
+        <li className='sidebar-list-item'>
           <Link to="/salaVirtual">
             <BsFillArchiveFill className='icon' /> Editar sala
+          </Link>
+        </li>
+        <li className='sidebar-list-item'>
+          <Link to="/">
+            <BsGrid1X2Fill className='icon' /> Editar professor
           </Link>
         </li>
         <li className='sidebar-list-item'>
@@ -39,11 +44,7 @@ function Sidebar({ openSidebarToggle, OpenSidebar }) {
             <BsPeopleFill className='icon' /> Monitorar alunos
           </Link>
         </li>
-        <li className='sidebar-list-item'>
-          <Link to="/login">
-            <BsMenuButtonWideFill className='icon' /> Cadastrar Professor
-          </Link>
-        </li>
+        
         <li className='sidebar-list-item'>
           <Link to="">
             <BsFillGearFill className='icon' /> Configurações
