@@ -90,9 +90,9 @@ img{
 
 .submit_container {
     display: flex;
-    justify-content: center;  /* Centraliza o botão horizontalmente */
-    align-items: center;      /* Centraliza o botão verticalmente (opcional, caso precise) */
-    margin-top: 30px;          /* Espaçamento do topo (ajuste conforme necessário) */
+    justify-content: center; 
+    align-items: center;     
+    margin-top: 30px;   
 }
 
 .submit {

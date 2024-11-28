@@ -79,10 +79,10 @@ img{
 
 .submit-container {
     display: flex;
-    justify-content: center; /* Garante que o botão estará centralizado horizontalmente */
-    align-items: center; /* Garante que o botão ficará centralizado verticalmente se necessário */
-    width: 100%; /* Garante que o contêiner ocupe toda a largura disponível */
-    margin-top: 40px; /* Ajusta o espaçamento do botão em relação ao conteúdo acima */
+    justify-content: center; 
+    align-items: center;
+    width: 100%; 
+    margin-top: 40px; 
 }
 
 .submit {

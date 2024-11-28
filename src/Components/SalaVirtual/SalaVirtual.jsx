@@ -4,9 +4,9 @@ import styles from './SalaVirtual.module.css';
 import { BsPeopleFill } from 'react-icons/bs';
 
 function SalaVirtual() {
-    const [salas, setSalas] = useState([]); // Estado para armazenar as salas
-    const [loading, setLoading] = useState(true); // Estado de carregamento
-    const [error, setError] = useState(null); // Estado para armazenar erros
+    const [salas, setSalas] = useState([]); 
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null); 
 
     // Função para buscar as salas da API
     useEffect(() => {
@@ -17,34 +17,33 @@ function SalaVirtual() {
                     throw new Error("Erro ao buscar salas");
                 }
                 const data = await response.json();
-                console.log("Dados recebidos da API:", data); // Verificando a estrutura dos dados
+                console.log("Dados recebidos da API:", data); 
                 setSalas(data);
             } catch (err) {
-                setError(err.message); // Em caso de erro, armazena a mensagem de erro
+                setError(err.message); 
             } finally {
-                setLoading(false); // Finaliza o estado de carregamento
+                setLoading(false); 
             }
         };
 
-        fetchSalas(); // Chama a função para buscar as salas
-    }, []); // O array vazio [] faz com que a função seja chamada apenas uma vez, ao carregar o componente
+        fetchSalas(); 
+    }, []); 
 
-    // Função para remover a sala
     const removerSala = async (id_sala) => {
         if (!id_sala) {
-            console.error("ID da sala é inválido:", id_sala); // Log para verificar o valor do id_sala
+            console.error("ID da sala é inválido:", id_sala); 
             return;
         }
 
         try {
-            console.log("Removendo sala com ID:", id_sala); // Verifique qual ID está sendo removido
+            console.log("Removendo sala com ID:", id_sala); 
             const response = await fetch(`http://localhost:8080/sala/removerSala/${id_sala}`, {
                 method: 'DELETE',
             });
 
             if (response.ok) {
-                // Remove a sala da lista no frontend
-                setSalas(salas.filter(sala => sala.id_sala !== id_sala)); // Mudamos aqui para usar id_sala
+                
+                setSalas(salas.filter(sala => sala.id_sala !== id_sala)); 
             } else {
                 throw new Error('Erro ao remover a sala');
             }
@@ -53,12 +52,10 @@ function SalaVirtual() {
         }
     };
 
-    // Se estiver carregando, exibe uma mensagem de carregamento
     if (loading) {
         return <div>Carregando...</div>;
     }
 
-    // Se houver erro, exibe a mensagem de erro
     if (error) {
         return <div>Erro: {error}</div>;
     }
@@ -77,7 +74,7 @@ function SalaVirtual() {
 
             <div className={styles.cardContainer}>
                 {salas.map(sala => {
-                    console.log("Sala:", sala); // Verificando a estrutura de cada sala
+                    console.log("Sala:", sala); 
                     return (
                         <div key={sala.id_sala} className={styles.cardItem}>
                             <div className={styles.cardContent}>
@@ -85,11 +82,10 @@ function SalaVirtual() {
                                 <h3>{sala.nome}</h3>
                                 <h3>{sala.descricao}</h3>
                                 <div className={styles.buttonContainer}>
-                                    {/* Link "VER SALA" que não faz nada */}
                                     <Link
                                         to="#"
                                         className={styles.cardLink}
-                                        onClick={(e) => e.preventDefault()} // Impede a navegação do link
+                                        onClick={(e) => e.preventDefault()} 
                                     >
                                         <h4>VER SALA</h4>
                                     </Link>
@@ -97,7 +93,7 @@ function SalaVirtual() {
                                         to="#" 
                                         className={styles.cardLink}
                                         onClick={(e) => {
-                                            e.preventDefault(); // Impede o comportamento de navegação do link
+                                            e.preventDefault(); 
                                             removerSala(sala.id_sala);
                                         }}
                                     >

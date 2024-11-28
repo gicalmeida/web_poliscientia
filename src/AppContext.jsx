@@ -2,6 +2,8 @@ import React, { createContext, useContext, useState } from 'react';
 
 const AppContext = createContext();
 
+//Dados não integrados
+
 export const AppProvider = ({ children }) => {
     const [data, setData] = useState({
         alunos: 300,
@@ -17,62 +19,6 @@ export const AppProvider = ({ children }) => {
             { name: 'Questão 06', er: 2390, ac: 3800, amt: 2500 },
             { name: 'Questão 07', er: 3490, ac: 4300, amt: 2100 },
         ],
-        /*salas: [
-            {
-                id: 1,
-                nome: "1° INFORMÁTICA",
-                ano: "1° ANO TÉCNICO EM INFORMÁTICA",
-                alunos: 32
-            },
-            {
-                id: 2,
-                nome: "2° INFORMÁTICA",
-                ano: "2° ANO TÉCNICO EM INFORMÁTICA",
-                alunos: 42
-            },
-            {
-                id: 3,
-                nome: "3° INFORMÁTICA",
-                ano: "3° ANO TÉCNICO EM INFORMÁTICA",
-                alunos: 38
-            },
-            {
-                id: 4,
-                nome: "1° MECÂNICA",
-                ano: "1° ANO TÉCNICO EM MECÂNICA",
-                alunos: 35
-            },
-            {
-                id: 5,
-                nome: "2° MECÂNICA",
-                ano: "2° ANO TÉCNICO EM MECÂNICA",
-                alunos: 39
-            },
-            {
-                id: 6,
-                nome: "3° MECÂNICA",
-                ano: "3° ANO TÉCNICO EM MECÂNICA",
-                alunos: 34
-            },
-            {
-                id: 7,
-                nome: "1° ELETROELETRÔNICA",
-                ano: "1° ANO TÉCNICO EM ELETROELETRÔNICA",
-                alunos: 37
-            },
-            {
-                id: 8,
-                nome: "2° ELETROELETRÔNICA",
-                ano: "2° ANO TÉCNICO EM ELETROELETRÔNICA",
-                alunos: 39
-            },
-            {
-                id: 9,
-                nome: "3° ELETROELETRÔNICA",
-                ano: "3° ANO TÉCNICO EM ELETROELETRÔNICA",
-                alunos: 36
-            }
-        ],*/
         alunosList: [
             { id: 1, nome: "ALUNO 1", email: "aluno1@gmail.com", senha: "********", pontuacao: 395 },
             { id: 2, nome: "ALUNO 2", email: "aluno2@gmail.com", senha: "********", pontuacao: 450 },
@@ -108,14 +54,12 @@ export const AppProvider = ({ children }) => {
         }));
     };
 
-
     return (
         <AppContext.Provider value={{ data, registerStudent, createRoom }}>
             {children}
         </AppContext.Provider>
     );
 };
-
 
 export const useAppContext = () => {
     return useContext(AppContext);

@@ -30,15 +30,13 @@ const SalaNova = () => {
             idade: idade 
         };
 
-        // Criando os dados da nova sala
         const novaSala = {
             nome: nomeSala,
             descricao: descricaoSala,
-            professor: novoProfessor  // Associando o professor à sala
+            professor: novoProfessor 
         };
 
         try {
-            // Enviar os dados para a API para criação da sala e professor
             const response = await fetch("http://localhost:8080/sala", {
                 method: "POST",
                 headers: {
@@ -52,7 +50,6 @@ const SalaNova = () => {
                 setStatus("Sala e professor criados com sucesso!");
                 console.log('Sala e professor criados com sucesso!', data);
 
-                // Limpando os campos após sucesso
                 setNomeSala("");
                 setDescricaoSala("");
                 setNomeProfessor("");
@@ -76,7 +73,6 @@ const SalaNova = () => {
                 <div className={styles.underline}></div>
             </div>
 
-            {/* Formulário para dados da sala */}
             <div className={styles.inputs}>
                 <div className={styles.input}>
                     <img src={name} alt="Ícone do nome da sala" />
@@ -98,7 +94,6 @@ const SalaNova = () => {
                 </div>
             </div>
 
-            {/* Formulário para dados do professor */}
             <div className={styles.inputs}>
                 <div className={styles.input}>
                     <img src={user_icon} alt="Ícone do nome do professor" />
@@ -138,14 +133,12 @@ const SalaNova = () => {
                 </div>
             </div>
 
-            {/* Botão de envio */}
             <div className={styles.submit_container}>
                 <button className={styles.submit} onClick={handleCreateRoomAndProfessor}>
                     Criar Sala
                 </button>
             </div>
 
-            {/* Exibe o status de sucesso ou erro */}
             <div className={styles.status}>
                 <p>{status}</p>
             </div>
