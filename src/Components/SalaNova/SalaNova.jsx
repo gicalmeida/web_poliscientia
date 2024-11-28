@@ -9,7 +9,6 @@ import school_icon from '../Assets/school.png';
 import age_icon from '../Assets/age.png';
 
 const SalaNova = () => {
-    // Estados para os campos do professor e da sala
     const [nomeSala, setNomeSala] = useState("");
     const [descricaoSala, setDescricaoSala] = useState("");
     const [nomeProfessor, setNomeProfessor] = useState("");
@@ -18,14 +17,12 @@ const SalaNova = () => {
     const [idade, setIdade] = useState("");
     const [status, setStatus] = useState("");
 
-    // Função para criar a sala e o professor simultaneamente
     const handleCreateRoomAndProfessor = async () => {
         if (!nomeSala || !descricaoSala || !nomeProfessor || !emailProfessor || !escola || !idade) {
             setStatus('Todos os campos são obrigatórios');
             return;
         }
 
-        // Criando os dados do novo professor
         const novoProfessor = { 
             nome_professor: nomeProfessor, 
             email_professor: emailProfessor, 

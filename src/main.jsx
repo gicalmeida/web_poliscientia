@@ -10,7 +10,7 @@ import Alunos from './Components/Alunos/Alunos';
 import SalaEspecifica from './Components/SalaEspecifica/SalaEspecifica';
 import EditarLogin from './Components/EditarLogin/EditarLogin';
 import EditarSala from './Components/EditarSala/EditarSala';
-//import ListaSalas from './Components/ListaSalas/ListaSalas';
+import ExcluirLogin from './Components/ExcluirLogin/ExcluirLogin';
 
 const App = () => {
   return (
@@ -25,8 +25,9 @@ const App = () => {
           <Route path="/alunos" element={<Alunos />}/>
           <Route path="/salaEspecifica" element={<SalaEspecifica />}/>
           <Route path="/editarLogin" element={<EditarLogin />}/>
-         {/* <Route path="/salas" element={<ListaSalas />} />  */}
           <Route path="/editar-sala/:id_sala" element={<EditarSala />} />  
+          <Route path="/editar-login/:id_professor" element={<EditarLogin />} />
+          <Route path="/excluiLogin" element={<ExcluirLogin />}/>
         </Routes>
       </BrowserRouter>
     </AppProvider>

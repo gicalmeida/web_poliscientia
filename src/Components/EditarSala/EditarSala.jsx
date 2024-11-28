@@ -23,9 +23,7 @@ const EditarSala = () => {
     const [idade, setIdade] = useState("");
     const [status, setStatus] = useState("");
 
-    // Carrega a lista de salas e a sala específica para edição
     useEffect(() => {
-        // Primeiro, carrega todas as salas disponíveis
         fetch("http://localhost:8080/sala/listaSalas")
             .then(response => response.json())
             .then(data => {
@@ -36,7 +34,6 @@ const EditarSala = () => {
                 setStatus("Erro ao carregar as salas.");
             });
 
-        // Se houver um id_sala, carrega os dados dessa sala específica
         if (id_sala) {
             fetch(`http://localhost:8080/sala/buscarSala/${id_sala}`)
                 .then(response => response.json())
@@ -59,16 +56,14 @@ const EditarSala = () => {
                     setStatus("Erro ao buscar os dados da sala.");
                 });
         }
-    }, [id_sala]); // Recarrega sempre que o id_sala mudar
+    }, [id_sala]); 
 
-    // Função para editar a sala e o professor
     const handleEditRoomAndProfessor = async () => {
         if (!nomeSala || !descricaoSala || !nomeProfessor || !emailProfessor || !escola || !idade) {
             setStatus('Todos os campos são obrigatórios');
             return;
         }
 
-        // Criando os dados do professor
         const professorAtualizado = {
             nome_professor: nomeProfessor,
             email_professor: emailProfessor,
@@ -80,11 +75,10 @@ const EditarSala = () => {
         const salaAtualizada = {
             nome: nomeSala,
             descricao: descricaoSala,
-            professor: professorAtualizado  // Envia o objeto do professor (não em array)
+            professor: professorAtualizado  
         };
 
         try {
-            // Enviar os dados para a API para atualizar a sala e o professor
             const response = await fetch(`http://localhost:8080/sala/editarSala/${id_sala}`, {
                 method: "PUT",
                 headers: {
@@ -99,13 +93,10 @@ const EditarSala = () => {
           
               console.log('Sala e professor atualizados com sucesso!', data);
           
-              // Exibir a mensagem de sucesso por um tempo antes de redirecionar
               setTimeout(() => {
-                  // Redirecionar após o sucesso para /salaVirtual
-                  navigate('/salaVirtual', { replace: true }); // Substitui a página atual no histórico
-              }, 2000); // Exibe a mensagem por 2 segundos (2000ms)
+                  navigate('/salaVirtual', { replace: true }); 
+              }, 2000); 
           } else {
-              // Captura a resposta de erro da API
               const errorData = await response.json();
               console.error("Erro na atualização:", errorData);
               setStatus(`Erro ao atualizar sala: ${errorData.message || errorData}`);
@@ -117,7 +108,6 @@ const EditarSala = () => {
         }
     };
 
-    // Função para carregar os dados da sala selecionada
     const handleSelectSala = (selectedId) => {
         if (selectedId) {
             navigate(`/editar-sala/${selectedId}`);
@@ -131,7 +121,6 @@ const EditarSala = () => {
                 <div className={styles.underline}></div>
             </div>
 
-            {/* Dropdown para selecionar a sala */}
             <div className={styles.input}>
                 <select
                     value={id_sala}
@@ -146,7 +135,6 @@ const EditarSala = () => {
                 </select>
             </div>
 
-            {/* Formulário para dados da sala */}
             <div className={styles.inputs}>
                 <div className={styles.input}>
                     <img src={nameIcon} alt="Ícone do nome da sala" />
@@ -168,7 +156,6 @@ const EditarSala = () => {
                 </div>
             </div>
 
-            {/* Formulário para dados do professor */}
             <div className={styles.inputs}>
                 <div className={styles.input}>
                     <img src={userIcon} alt="Ícone do nome do professor" />
@@ -208,14 +195,12 @@ const EditarSala = () => {
                 </div>
             </div>
 
-            {/* Botão de envio */}
             <div className={styles.submit_container}>
                 <button className={styles.submit} onClick={handleEditRoomAndProfessor}>
                     Atualizar Sala
                 </button>
             </div>
 
-            {/* Exibe o status de sucesso ou erro */}
             <div className={styles.status}>
                 <p>{status}</p>
             </div>

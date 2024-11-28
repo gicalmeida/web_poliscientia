@@ -30,13 +30,13 @@ function Sidebar({ openSidebarToggle, OpenSidebar }) {
           </Link>
         </li>
         <li className='sidebar-list-item'>
-          <Link to="/">
+          <Link to="/editar-login/:id_professor">
             <BsGrid1X2Fill className='icon' /> Editar professor
           </Link>
         </li>
         <li className='sidebar-list-item'>
-          <Link to="">
-            <BsListCheck className='icon' /> Lista de Professores
+          <Link to="/excluirLogin">
+            <BsListCheck className='icon' /> Excluir Professor
           </Link>
         </li>
         <li className='sidebar-list-item'> 
