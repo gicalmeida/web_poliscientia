@@ -10,11 +10,10 @@ import ageIcon from '../Assets/age.png';
 import userIcon from '../Assets/person.png';
 
 const EditarSala = () => {
-    const { id_sala } = useParams();  // Pega o ID da sala da URL
-    const navigate = useNavigate();  // Usando useNavigate para navegação
+    const { id_sala } = useParams(); 
+    const navigate = useNavigate();  
     
-    // Estados para os campos do formulário
-    const [salas, setSalas] = useState([]); // Lista de salas para seleção
+    const [salas, setSalas] = useState([]); 
     const [nomeSala, setNomeSala] = useState("");
     const [descricaoSala, setDescricaoSala] = useState("");
     const [nomeProfessor, setNomeProfessor] = useState("");
@@ -71,7 +70,6 @@ const EditarSala = () => {
             idade: idade
         };
 
-        // Criando os dados da sala
         const salaAtualizada = {
             nome: nomeSala,
             descricao: descricaoSala,

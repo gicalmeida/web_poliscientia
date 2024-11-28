@@ -7,7 +7,6 @@ const ExcluirLogin = () => {
     const [professorSelecionado, setProfessorSelecionado] = useState("");
     const [status, setStatus] = useState("");
 
-    // Carregar lista de professores ao montar o componente
     useEffect(() => {
         const fetchProfessores = async () => {
             try {
@@ -23,7 +22,6 @@ const ExcluirLogin = () => {
         fetchProfessores();
     }, []);
 
-    // Função para excluir o professor
     const handleDeleteProfessor = async () => {
         if (!professorSelecionado) {
             setStatus("Selecione um professor para excluir.");
@@ -37,7 +35,6 @@ const ExcluirLogin = () => {
 
             if (response.ok) {
                 setStatus("Professor excluído com sucesso!");
-                // Atualizar lista de professores após exclusão
                 setProfessores(professores.filter(professor => professor.id_professor !== parseInt(professorSelecionado)));
                 setProfessorSelecionado("");
             } else {

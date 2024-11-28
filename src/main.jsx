@@ -7,7 +7,6 @@ import SalaNova from './Components/SalaNova/SalaNova';
 import { AppProvider } from './AppContext'; 
 import SalaVirtual from './Components/SalaVirtual/SalaVirtual';
 import Alunos from './Components/Alunos/Alunos';
-import SalaEspecifica from './Components/SalaEspecifica/SalaEspecifica';
 import EditarLogin from './Components/EditarLogin/EditarLogin';
 import EditarSala from './Components/EditarSala/EditarSala';
 import ExcluirLogin from './Components/ExcluirLogin/ExcluirLogin';
@@ -23,11 +22,10 @@ const App = () => {
           <Route path="/salaNova" element={<SalaNova />} />
           <Route path="/salaVirtual" element={<SalaVirtual />} />
           <Route path="/alunos" element={<Alunos />}/>
-          <Route path="/salaEspecifica" element={<SalaEspecifica />}/>
           <Route path="/editarLogin" element={<EditarLogin />}/>
           <Route path="/editar-sala/:id_sala" element={<EditarSala />} />  
           <Route path="/editar-login/:id_professor" element={<EditarLogin />} />
-          <Route path="/excluiLogin" element={<ExcluirLogin />}/>
+          <Route path="/excluirLogin" element={<ExcluirLogin />}/>
         </Routes>
       </BrowserRouter>
     </AppProvider>

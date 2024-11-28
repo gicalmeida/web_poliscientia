@@ -44,12 +44,6 @@ function Sidebar({ openSidebarToggle, OpenSidebar }) {
             <BsPeopleFill className='icon' /> Monitorar alunos
           </Link>
         </li>
-        
-        <li className='sidebar-list-item'>
-          <Link to="">
-            <BsFillGearFill className='icon' /> Configurações
-          </Link>
-        </li>
       </ul>
     </aside>
   );

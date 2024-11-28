@@ -77,23 +77,22 @@ img{
     cursor: pointer;
 }
 
-.submit-container{
+.submit-container {
     display: flex;
-    gap: 30px;
-    margin: 60px auto;
+    justify-content: center; /* Garante que o botão estará centralizado horizontalmente */
+    align-items: center; /* Garante que o botão ficará centralizado verticalmente se necessário */
+    width: 100%; /* Garante que o contêiner ocupe toda a largura disponível */
+    margin-top: 40px; /* Ajusta o espaçamento do botão em relação ao conteúdo acima */
 }
 
-.submit{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    align-items: center;
-    width: 220px;
-    height: 59px;
+.submit {
+    width: 220px; 
+    height: 59px; 
     color: #fff;
     background: #4c00b4;
     border-radius: 50px;
     font-size: 19px;
     font-weight: 700;
     cursor: pointer;
+    text-align: center; 
 }

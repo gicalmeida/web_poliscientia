@@ -85,11 +85,16 @@ function SalaVirtual() {
                                 <h3>{sala.nome}</h3>
                                 <h3>{sala.descricao}</h3>
                                 <div className={styles.buttonContainer}>
-                                    <Link to={`/salaEspecifica/${sala.id_sala}`} className={styles.cardLink}>
+                                    {/* Link "VER SALA" que não faz nada */}
+                                    <Link
+                                        to="#"
+                                        className={styles.cardLink}
+                                        onClick={(e) => e.preventDefault()} // Impede a navegação do link
+                                    >
                                         <h4>VER SALA</h4>
                                     </Link>
                                     <Link 
-                                        to="#" // Não redireciona, apenas ativa a remoção
+                                        to="#" 
                                         className={styles.cardLink}
                                         onClick={(e) => {
                                             e.preventDefault(); // Impede o comportamento de navegação do link
